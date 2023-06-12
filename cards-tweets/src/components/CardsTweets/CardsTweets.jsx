@@ -7,6 +7,7 @@ const CardsTweets = () => {
     <main className={styles.background}>
       {/* <h1>CardsTweets</h1> */}
       <Card />
+      <Card />
     </main>
   );
 };

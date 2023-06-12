@@ -1,4 +1,7 @@
 .background{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
     background-color: aqua;
     padding: 15px 15px;
 }

@@ -20,14 +20,16 @@ const Card = () => {
         className={styles.image}
         src={user}
         alt="User"
-        width={60}
-        height={60}
+        width={80}
+        height={80}
       />
       <p className={styles.tweets}>777 tweets</p>
       <p className={styles.followers}>100,500 Followers</p>
-      <button className={styles.btn} type="button">
-        Follow
-      </button>
+      <div className={styles.wrapbtn}>
+        <button className={styles.btn} type="button">
+          Follow
+        </button>
+      </div>
     </div>
   );
 };
