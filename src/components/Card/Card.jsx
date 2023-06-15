@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import styles from "./card.module.scss";
 import user from "../../images/Hansel.png";
 import logo from "../../images/Logo.png";
+import { useSelector } from "react-redux";
+import { selectUsers } from "../../redux/users/usersSelector";
 
-const Card = () => {
+const Card = ({ item }) => {
   const [newFollower, setNewFollower] = useState(true);
+  const users = useSelector(selectUsers);
 
   const handleFollow = () => setNewFollower(!newFollower);
+  console.log(users[0]);
 
   return (
-    <div className={styles.card}>
+    <li className={styles.card} key={item.id}>
       <div className={styles.background}>
         <img
           className={styles.logo}
@@ -29,9 +33,9 @@ const Card = () => {
         />
       </div>
 
-      <p className={styles.tweets}>777 tweets</p>
+      <p className={styles.tweets}>{item.tweets} tweets</p>
       <p className={styles.followers}>
-        {newFollower ? "100,500 " : "100,501 "}Followers
+        {newFollower ? `${item.followers}` : `${item.followers}+1`} Followers
       </p>
       <div className={styles.wrapbtn}>
         <button
@@ -41,7 +45,7 @@ const Card = () => {
           {newFollower ? "Follow " : "Following "}
         </button>
       </div>
-    </div>
+    </li>
   );
 };
 

@@ -1,4 +1,4 @@
-import publicAPI from "../shared/http";
+import { publicAPI } from "../shared/http";
 
 export const fetchUsers = async () => {
   const { data } = await publicAPI.get("");
