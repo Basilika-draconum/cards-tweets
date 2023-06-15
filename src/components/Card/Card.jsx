@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import styles from "./card.module.scss";
-import user from "../../images/Hansel.png";
+// import user from "../../images/Hansel.png";
 import logo from "../../images/Logo.png";
-import { useSelector } from "react-redux";
-import { selectUsers } from "../../redux/users/usersSelector";
+// import { useSelector } from "react-redux";
+// import { selectUsers } from "../../redux/users/usersSelector";
 
 const Card = ({ item }) => {
-  const [newFollower, setNewFollower] = useState(true);
-  const users = useSelector(selectUsers);
+  const [newFollower, setNewFollower] = useState(false);
+  // const users = useSelector(selectUsers);
 
   const handleFollow = () => setNewFollower(!newFollower);
-  console.log(users[0]);
 
   return (
     <li className={styles.card} key={item.id}>
@@ -26,8 +25,8 @@ const Card = ({ item }) => {
       <div className={styles.wrapimage}>
         <img
           className={styles.image}
-          src={user}
-          alt="User"
+          src={item.avatar}
+          alt={item.user}
           width={60}
           height={60}
         />
@@ -35,14 +34,14 @@ const Card = ({ item }) => {
 
       <p className={styles.tweets}>{item.tweets} tweets</p>
       <p className={styles.followers}>
-        {newFollower ? `${item.followers}` : `${item.followers}+1`} Followers
+        {newFollower ? `${item.followers}+1` : `${item.followers}`} Followers
       </p>
       <div className={styles.wrapbtn}>
         <button
-          className={newFollower ? `${styles.btn}` : `${styles.btnActive}`}
+          className={newFollower ? `${styles.btnActive}` : `${styles.btn}`}
           type="button"
           onClick={handleFollow}>
-          {newFollower ? "Follow " : "Following "}
+          {newFollower ? "Following " : "Follow "}
         </button>
       </div>
     </li>

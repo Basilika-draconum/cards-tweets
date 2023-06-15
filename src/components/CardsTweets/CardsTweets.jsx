@@ -16,8 +16,11 @@ const CardsTweets = () => {
   }, [dispatch]);
 
   return (
-    <main>
+    <main className={styles.commonStyles}>
       <ul className={styles.background}>{cardUser}</ul>
+      <button type="button" className={styles.loadBtn}>
+        Load More
+      </button>
     </main>
   );
 };
