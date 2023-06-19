@@ -4,6 +4,7 @@ import Card from "../Card/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUsers } from "../../redux/users/usersSelector";
 import { getUsersThunk } from "../../redux/users/usersThunk";
+import { NavLink } from "react-router-dom";
 
 const CardsTweets = () => {
   const [list, setList] = useState([]);
@@ -41,9 +42,9 @@ const CardsTweets = () => {
             Load More
           </button>
         )}
-        <button type="button" className={styles.loadBtn}>
+        <NavLink to="/" className={`${styles.loadBtn} ${styles.backBtn}`}>
           Back
-        </button>
+        </NavLink>
       </main>
     </>
   );
