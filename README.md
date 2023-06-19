@@ -12,8 +12,3 @@ The Home page displays greeting for visitors.
 The Tweets page displays cards another visitors with brief information such as photo user, numbers of followers and tweets.
 ![TweetsPage](image-2.png)
 You can follow or unfollow a person.
-
-## Project SetUp
-
-npm install
-npm run serve

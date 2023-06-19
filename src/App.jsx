@@ -1,8 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 
-// import CardsTweets from "./components/CardsTweets/CardsTweets";
-// import Home from "./components/Home/Home";
-import "./app.module.scss";
 import { SharedLayout } from "./components/SharedLayout/SharedLayout";
 import { lazy } from "react";
 

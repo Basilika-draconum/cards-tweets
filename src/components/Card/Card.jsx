@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./card.module.scss";
-// import user from "../../images/Hansel.png";
 import logo from "../../images/Logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -27,7 +26,8 @@ const Card = ({ item }) => {
         dispatch(getUsersThunk());
       });
   };
-
+  const rightFormatTweets = new Intl.NumberFormat().format(item.tweets);
+  const rightFormatFollowers = new Intl.NumberFormat().format(item.followers);
   return (
     <li className={styles.card}>
       <div className={styles.background}>
@@ -49,8 +49,8 @@ const Card = ({ item }) => {
         />
       </div>
 
-      <p className={styles.tweets}>{item.tweets} tweets</p>
-      <p className={styles.followers}>{item.followers} Followers</p>
+      <p className={styles.tweets}>{rightFormatTweets} tweets</p>
+      <p className={styles.followers}>{rightFormatFollowers} Followers</p>
       <div className={styles.wrapbtn}>
         <button
           className={item.newFollower ? `${styles.btnActive}` : `${styles.btn}`}
