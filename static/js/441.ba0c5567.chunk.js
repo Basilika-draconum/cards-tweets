@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcards_tweets=self.webpackChunkcards_tweets||[]).push([[441],{179:function(e,t,a){a.r(t),a.d(t,{default:function(){return i}});a(791);var r={wrapper:"home_wrapper__6SKAg",title:"home_title__jndhp"},s=a.p+"static/media/tweeter.752bd0a61af5fec8ac0a.png",c=a(184),i=function(){return(0,c.jsxs)("main",{className:r.wrapper,children:[(0,c.jsx)("h1",{className:r.title,children:"Welcome to homepage!"}),(0,c.jsx)("img",{srcSet:s,alt:"Tweeter",width:500,className:r.picture})]})}}}]);
+//# sourceMappingURL=441.ba0c5567.chunk.js.map
