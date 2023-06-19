@@ -41,6 +41,9 @@ const CardsTweets = () => {
             Load More
           </button>
         )}
+        <button type="button" className={styles.loadBtn}>
+          Back
+        </button>
       </main>
     </>
   );

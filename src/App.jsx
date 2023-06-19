@@ -1,11 +1,23 @@
-import CardsTweets from "./components/CardsTweets/CardsTweets";
+import { Route, Routes } from "react-router-dom";
+
+// import CardsTweets from "./components/CardsTweets/CardsTweets";
+// import Home from "./components/Home/Home";
 import "./app.module.scss";
+import { SharedLayout } from "./components/SharedLayout/SharedLayout";
+import { lazy } from "react";
+
+const Home = lazy(() => import("./components/Home/Home"));
+const CardsTweets = lazy(() => import("./components/CardsTweets/CardsTweets"));
 
 function App() {
   return (
-    <div className="app">
-      <CardsTweets />
-    </div>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/tweets" element={<CardsTweets />} />
+        <Route path="*" element={<Home />} />
+      </Route>
+    </Routes>
   );
 }
 
