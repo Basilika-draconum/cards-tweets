@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUsersThunk } from "./usersThunk";
+import { getUsersThunk, updateTweetByIdThunk } from "./usersThunk";
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -25,7 +25,13 @@ const userSlice = createSlice({
         state.error = null;
         state.items = payload;
       })
-      .addCase(getUsersThunk.rejected, handleRejected);
+      .addCase(getUsersThunk.rejected, handleRejected)
+      .addCase(updateTweetByIdThunk.pending, handlePending)
+      .addCase(updateTweetByIdThunk.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(updateTweetByIdThunk.rejected, handleRejected);
   },
 });
 

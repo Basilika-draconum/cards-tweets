@@ -1,14 +1,25 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { fetchUsers } from "../../services/userService";
+import { fetchUsers, updateTweetById } from "../../services/userService";
 
 export const getUsersThunk = createAsyncThunk(
   "users/getUsers",
-  async (_, { rejectWithValue }) => {
+  async (page, { rejectWithValue }) => {
     try {
-      const result = await fetchUsers();
+      const result = await fetchUsers(page);
       return result;
     } catch (error) {
-      console.log("error", error);
+      return rejectWithValue();
+    }
+  }
+);
+
+export const updateTweetByIdThunk = createAsyncThunk(
+  "users/getTweet",
+  async (obj, { rejectWithValue }) => {
+    try {
+      const result = await updateTweetById(obj);
+      return result;
+    } catch (error) {
       return rejectWithValue();
     }
   }

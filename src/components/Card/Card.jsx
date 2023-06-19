@@ -1,15 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./card.module.scss";
 // import user from "../../images/Hansel.png";
 import logo from "../../images/Logo.png";
-// import { useSelector } from "react-redux";
-// import { selectUsers } from "../../redux/users/usersSelector";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getUsersThunk,
+  updateTweetByIdThunk,
+} from "../../redux/users/usersThunk";
+import { selectUsers } from "../../redux/users/usersSelector";
 
 const Card = ({ item }) => {
-  const [newFollower, setNewFollower] = useState(false);
-  // const users = useSelector(selectUsers);
+  const users = useSelector(selectUsers);
 
-  const handleFollow = () => setNewFollower(!newFollower);
+  const dispatch = useDispatch();
+
+  const handleToggle = (id, newFollower, followers) => {
+    const obj = users.find((item) => item.id === id);
+    const newObj = {
+      ...obj,
+      newFollower: !newFollower,
+      followers: newFollower ? followers - 1 : followers + 1,
+    };
+    dispatch(updateTweetByIdThunk(newObj))
+      .unwrap()
+      .then(() => {
+        dispatch(getUsersThunk());
+      });
+  };
 
   return (
     <li className={styles.card} key={item.id}>
@@ -33,15 +50,15 @@ const Card = ({ item }) => {
       </div>
 
       <p className={styles.tweets}>{item.tweets} tweets</p>
-      <p className={styles.followers}>
-        {newFollower ? `${item.followers}+1` : `${item.followers}`} Followers
-      </p>
+      <p className={styles.followers}>{item.followers} Followers</p>
       <div className={styles.wrapbtn}>
         <button
-          className={newFollower ? `${styles.btnActive}` : `${styles.btn}`}
+          className={item.newFollower ? `${styles.btnActive}` : `${styles.btn}`}
           type="button"
-          onClick={handleFollow}>
-          {newFollower ? "Following " : "Follow "}
+          onClick={() =>
+            handleToggle(item.id, item.newFollower, item.followers)
+          }>
+          {item.newFollower ? "Following " : "Follow "}
         </button>
       </div>
     </li>

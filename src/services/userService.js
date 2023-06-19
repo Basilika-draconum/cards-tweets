@@ -1,10 +1,11 @@
 import { publicAPI } from "../shared/http";
 
-export const fetchUsers = async () => {
-  const { data } = await publicAPI.get("");
+export const fetchUsers = async (params) => {
+  const { data } = await publicAPI.get("", params);
   return data;
 };
-export const fetchUser = async (id) => {
-  const { data } = await publicAPI.get(id);
+
+export const updateTweetById = async (obj) => {
+  const { data } = await publicAPI.put(`/${obj.id}`, obj);
   return data;
 };
