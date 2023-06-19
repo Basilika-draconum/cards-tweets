@@ -19,7 +19,7 @@ const CardsTweets = () => {
   const addedCards = list.slice(0, visibleCards);
 
   const cardUser = addedCards.map((item) => {
-    return <Card item={item} />;
+    return <Card item={item} key={item.id} />;
   });
 
   useEffect(() => {

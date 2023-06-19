@@ -1,7 +1,7 @@
 import { publicAPI } from "../shared/http";
 
-export const fetchUsers = async (params) => {
-  const { data } = await publicAPI.get("", params);
+export const fetchUsers = async () => {
+  const { data } = await publicAPI.get("");
   return data;
 };
 

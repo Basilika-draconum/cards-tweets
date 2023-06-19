@@ -29,7 +29,7 @@ const Card = ({ item }) => {
   };
 
   return (
-    <li className={styles.card} key={item.id}>
+    <li className={styles.card}>
       <div className={styles.background}>
         <img
           className={styles.logo}
