@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/cards-tweets/static/css/main.159d0db2.css",
-    "main.js": "/cards-tweets/static/js/main.956f7371.js",
+    "main.css": "/cards-tweets/static/css/main.c0f1a5e4.css",
+    "main.js": "/cards-tweets/static/js/main.5802c354.js",
     "static/css/441.39270eda.chunk.css": "/cards-tweets/static/css/441.39270eda.chunk.css",
     "static/js/441.ba0c5567.chunk.js": "/cards-tweets/static/js/441.ba0c5567.chunk.js",
     "static/css/326.135a2a6d.chunk.css": "/cards-tweets/static/css/326.135a2a6d.chunk.css",
-    "static/js/326.3babe557.chunk.js": "/cards-tweets/static/js/326.3babe557.chunk.js",
+    "static/js/326.7bc0dfa4.chunk.js": "/cards-tweets/static/js/326.7bc0dfa4.chunk.js",
     "static/js/787.61b84f0f.chunk.js": "/cards-tweets/static/js/787.61b84f0f.chunk.js",
     "static/media/tweeter.png": "/cards-tweets/static/media/tweeter.752bd0a61af5fec8ac0a.png",
     "static/media/bcgCard.png": "/cards-tweets/static/media/bcgCard.032662a2a907475127d7.png",
     "index.html": "/cards-tweets/index.html",
-    "main.159d0db2.css.map": "/cards-tweets/static/css/main.159d0db2.css.map",
-    "main.956f7371.js.map": "/cards-tweets/static/js/main.956f7371.js.map",
+    "main.c0f1a5e4.css.map": "/cards-tweets/static/css/main.c0f1a5e4.css.map",
+    "main.5802c354.js.map": "/cards-tweets/static/js/main.5802c354.js.map",
     "441.39270eda.chunk.css.map": "/cards-tweets/static/css/441.39270eda.chunk.css.map",
     "441.ba0c5567.chunk.js.map": "/cards-tweets/static/js/441.ba0c5567.chunk.js.map",
     "326.135a2a6d.chunk.css.map": "/cards-tweets/static/css/326.135a2a6d.chunk.css.map",
-    "326.3babe557.chunk.js.map": "/cards-tweets/static/js/326.3babe557.chunk.js.map",
+    "326.7bc0dfa4.chunk.js.map": "/cards-tweets/static/js/326.7bc0dfa4.chunk.js.map",
     "787.61b84f0f.chunk.js.map": "/cards-tweets/static/js/787.61b84f0f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.159d0db2.css",
-    "static/js/main.956f7371.js"
+    "static/css/main.c0f1a5e4.css",
+    "static/js/main.5802c354.js"
   ]
 }
